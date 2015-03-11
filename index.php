@@ -1,9 +1,7 @@
 <html>
 <head>
 	<title>Find a players Information</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<script src="js/bootstrap.js"></script>
-	<script src="js/npm.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <style>
 body {
 	background-image: url(grad.jpg);
