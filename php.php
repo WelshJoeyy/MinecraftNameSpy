@@ -1,8 +1,13 @@
 <?php
 
 // Load the username from somewhere
-$username = $_POST["username"];
-
+if (
+$username = $_POST["username"]
+) {
+	//do nothing 
+} else {
+	$username = "notch";
+}
 //user's skin
 $userSkin = "<img src='https://mcapi.ca/skin/3d/$username' />";
 
@@ -46,9 +51,7 @@ foreach ($json as $name) {
 <head>
 	<?php echo $usersFavicon;?>
 	<title><?php echo $username?>'s Information</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<script src="js/bootstrap.js"></script>
-	<script src="js/npm.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<title>Find a player skin!</title>
 <style>
 body {
