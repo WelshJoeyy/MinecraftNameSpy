@@ -59,7 +59,6 @@ body {
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 100% 500px;
-	min-width: 1320px;
 }
 #content {
 	margin-left: auto;
