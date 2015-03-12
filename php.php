@@ -38,7 +38,17 @@ $json = json_decode($content);
 $names = array(); // Create a new array
 
 foreach ($json as $name) {
-    $names[] = $name->name; // Add each "name" value to our array "names"
+    $input = $name->name;
+
+    if (!empty($name->changedToAt)) {
+        // Convert to YYYY-MM-DD HH:MM:SS format
+        $time = date('Y-m-d H:i:s', $name->changedToAt);
+
+        $input .= ' (changed at ' . $time . ')';
+    }
+
+    $names[] = $input; // Add each "name" value to our array "names"
+
 }
 
 //use $uuid tp grab UUID of the user - ---- - - - use $names to get name history of the user.
@@ -70,6 +80,9 @@ img.logo {
 	margin-left: auto;
 	display: block;
 	padding: 30px;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
 .center {
 	margin-left: auto;
@@ -78,9 +91,14 @@ img.logo {
 .footer {
         text-align: center;
 }
+p.responsive {
+  word-wrap: break-word;
+}
+
 </style>
 </head>
 <body>
+<a href="https://github.com/WelshJoeyy/MinecraftNameSpy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://minecraftnamespy.esy.es/source.png" alt="View Source on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
 <!--debug -->
 
@@ -97,7 +115,7 @@ img.logo {
     <h3 class="panel-title"><?php echo $username;?>'s UUID</h3>
   </div>
   <div class="panel-body">
-    <?php echo $uuid;?>
+    <p class="responsive"><?php echo $uuid;?></p>
   </div>
 </div>
 </div>
