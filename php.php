@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_NOTICE);
 // Load the username from somewhere
 if (
 $username = $_POST["username"]
@@ -8,23 +8,38 @@ $username = $_POST["username"]
 } else {
 	$username = "notch";
 }
-//user's skin
-$userSkin = "<img src='https://mcapi.ca/skin/3d/$username' />";
+
 
 //allow the user to change the skin
 $skinChange = "<a href='https://minecraft.net/profile/skin/remote?url=http://skins.minecraft.net/MinecraftSkins/$username.png' target='_blank' </a>";
 
 //url to users 3D head (avatar)
-$usersAvatar = "https://minotar.net/cube/$username/100.png";
+$usersAvatar = "https://mcapi.ca/avatar/2d/$username/55";
 
 //user's Avatar as favivon
 $usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' />";
 
-// Get the userinfo
-$content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username));
+//grabbing the users information
+if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username))
+) {
+  $userSkin = "<img src='https://mcapi.ca/skin/3d/$username' />";
+} else {
+  $content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username) . '?at=0');
+   $json = json_decode($content);
 
+   foreach ($json as $currentName) {
+    $input = $currentName->name;
+   }
+   
+   $userSkin = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
+}
 // Decode it
 $json = json_decode($content);
+
+// Check for error
+if (!empty($json->error)) {
+    die('An error happened: ' . $json->errorMessage);
+}
 
 // Save the uuid
 $uuid = $json->id;
