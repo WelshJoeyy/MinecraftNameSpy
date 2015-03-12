@@ -1,5 +1,6 @@
 <html>
 <head>
+	
 	<title>Find a players Information</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <style>
@@ -20,7 +21,9 @@ img.logo {
 	margin-left: auto;
 	display: block;
 	width: auto;
+	max-width: 100%;
 	height: auto;
+	width: auto\9;
 }
 .footer {
 	text-align: center;
@@ -28,6 +31,8 @@ img.logo {
 </style>
 </head>
 <body>
+
+<a href="https://github.com/WelshJoeyy/MinecraftNameSpy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://minecraftnamespy.esy.es/source.png" alt="View Source on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
 <div id="content">
 
