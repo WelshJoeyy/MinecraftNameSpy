@@ -13,12 +13,6 @@ $username = $_POST["username"]
 //allow the user to change the skin
 $skinChange = "<a href='https://minecraft.net/profile/skin/remote?url=http://skins.minecraft.net/MinecraftSkins/$username.png' target='_blank' </a>";
 
-//url to users 3D head (avatar)
-$usersAvatar = "https://mcapi.ca/avatar/2d/$username/55";
-
-//user's Avatar as favivon
-$usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' />";
-
 //grabbing the users information
 if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username))
 ) {
@@ -33,6 +27,13 @@ if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraf
    
    $userSkin = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
 }
+
+//url to users 3D head (avatar)
+$usersAvatar = "https://mcapi.ca/avatar/2d/$currentName/55";
+
+//user's Avatar as favivon
+$usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' />";
+
 // Decode it
 $json = json_decode($content);
 
