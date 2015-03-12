@@ -4,9 +4,6 @@ View Minecraft Players' UUID, Name History and Skin.
 The source released may be altered to your hearts content, although it would be much appreciated if you were to live the footer! Please respect the license! Shown below.
 It would help me out a lot! Enjoy!
 
- ### THE SOURCE CODE IS CONSTANTLY UPDATED SO BE SURE TO COME BACK AND CHECK TO SEE IF THERE ARE ANY CHANGES ###
-  ## CHECK THE FORUM POST AT PLANETMINECRAFT TO VIEW UPDATES ##
-
 Features and Cool little designs:
 
 - Features the ability to search any Minecraft Player Username and get the UUID and Name History of the entered username.
