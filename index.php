@@ -41,7 +41,7 @@ img.logo {
 </div>
 
 <div class="col-md-12">
-<form action="php.php" method="POST">
+<form action="php.php" method="GET">
   <div class="form-group">
     <label for="username">Username:</label>
     <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
