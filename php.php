@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
+
 // Load the username from somewhere
 if (
 $username = $_POST["username"]
@@ -19,16 +19,20 @@ if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraf
   $userSkin = "<img src='https://mcapi.ca/skin/3d/$username' />";
 } else {
   $content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username) . '?at=0');
-   $json = json_decode($content);
+if( $http_response_header['0'] == "HTTP/1.1 204 No Content") {
+    echo "no user";
+    die;
+}
+$json = json_decode($content);
 
    foreach ($json as $currentName) {
-    $input = $currentName->name;
-   }
+   $currentName = $currentName;
+}
    
    $userSkin = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
 }
 
-//url to users 3D head (avatar)
+//url to users 2D head (avatar)
 $usersAvatar = "https://mcapi.ca/avatar/2d/$currentName/55";
 
 //user's Avatar as favivon
@@ -169,6 +173,14 @@ p.responsive {
 	<span>Created by _scrunch</span> &#8226;
 	<span>&copy;2015</span> &#8226;
 	<span>Find me on <a href="http://www.planetminecraft.com/member/tacolover22/" target="_blank">PMC</a></span>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="Y8MWQB9FCUTFJ">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 </div>
 </div>
 </body>
