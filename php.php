@@ -1,5 +1,5 @@
 <?php
-
+//error_reporting(E_ALL & ~E_NOTICE);
 // Load the username from somewhere
 if (
 $username = $_POST["username"]
@@ -20,7 +20,7 @@ if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraf
 } else {
   $content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username) . '?at=0');
 if( $http_response_header['0'] == "HTTP/1.1 204 No Content") {
-    echo "no user";
+    echo "Not a valid Minecraft Username! <a href='index.php'><button>Search Again?</button></a>";
     die;
 }
 $json = json_decode($content);
@@ -32,11 +32,7 @@ $json = json_decode($content);
    $userSkin = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
 }
 
-//url to users 2D head (avatar)
-$usersAvatar = "https://mcapi.ca/avatar/2d/$currentName/55";
 
-//user's Avatar as favivon
-$usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' />";
 
 // Decode it
 $json = json_decode($content);
@@ -71,6 +67,11 @@ foreach ($json as $name) {
 
 }
 
+//url to users 2D head (avatar)
+$usersAvatar = "https://mcapi.ca/avatar/2d/$input/55";
+
+//user's Avatar as favivon
+$usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' />";
 //use $uuid tp grab UUID of the user - ---- - - - use $names to get name history of the user.
 
 
