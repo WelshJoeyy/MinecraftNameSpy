@@ -119,7 +119,7 @@ p.responsive {
 </style>
 </head>
 <body>
-<a href="https://github.com/WelshJoeyy/MinecraftNameSpy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://minecraftnamespy.esy.es/source.png" alt="View Source on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+<a href="https://github.com/WelshJoeyy/MinecraftNameSpy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://mcspy.info/source.png" alt="View Source on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
 <!--debug -->
 
