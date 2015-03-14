@@ -1,7 +1,7 @@
 # MinecraftNameSpy
 View Minecraft Players' UUID, Name History and Skin. 
 
-The source released may be altered to your hearts content, although it would be much appreciated if you were to live the footer! Please respect the license! Shown below.
+The source released may be altered to your hearts content, although it would be much appreciated if you were to keep the footer! Please respect the license! Shown below.
 It would help me out a lot! Enjoy!
 
 Features and Cool little designs:
