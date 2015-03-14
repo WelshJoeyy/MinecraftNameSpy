@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <style>
 body {
-	background-image: url(http://minecraftnamespy.esy.es/grad.jpg);
+	background-image: url(http://mcspy.info/grad.jpg);
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 100% 500px;
@@ -37,7 +37,7 @@ img.logo {
 <div id="content">
 
 <div class="col-md-12">
-	<img class="logo" src="http://minecraftnamespy.esy.es/logo.png">
+	<img class="logo" src="http://mcspy.info/logo_big.png">
 </div>
 
 <div class="col-md-12">
