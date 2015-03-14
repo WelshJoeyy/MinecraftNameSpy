@@ -20,8 +20,7 @@ if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraf
 } else {
   $content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username) . '?at=0');
 if( $http_response_header['0'] == "HTTP/1.1 204 No Content") {
-    echo "Not a valid Minecraft Username! <a href='index.php'><button>Search Again?</button></a>";
-    die;
+    header ('Location: http://mcspy.info/php.php?username=notch');
 }
 $json = json_decode($content);
 
