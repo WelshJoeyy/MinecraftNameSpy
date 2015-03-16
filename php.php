@@ -16,12 +16,11 @@ $skinChange = "<a href='https://minecraft.net/profile/skin/remote?url=http://ski
 //grabbing the users information
 if ($content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username))
 ) {
-  $userSkin = "<img src='https://mcapi.ca/skin/3d/$username' />";
+  $userSkin3D = "<img src='https://mcapi.ca/skin/3d/$username' />";
+  $userSkin2D = "<img src='https://mcapi.ca/skin/2d/$username' />";
 } else {
   $content = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . urlencode($username) . '?at=0');
 if( $http_response_header['0'] == "HTTP/1.1 204 No Content") {
-	//change the URL to match that of your site. If you don't, a invalid player name will redirect users to the demo site
-	//and display Notch's Character.
     header ('Location: http://mcspy.info/php.php?username=notch');
 }
 $json = json_decode($content);
@@ -30,7 +29,8 @@ $json = json_decode($content);
    $currentName = $currentName;
 }
    
-   $userSkin = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
+   $userSkin3D = "<img src='https://mcapi.ca/skin/3d/$currentName' />";
+   $userSkin2D = "<img src='https://mcapi.ca/skin/2d/$currentName' />";
 }
 
 
@@ -87,7 +87,7 @@ $usersFavicon = "<link rel='shortcut icon' href='$usersAvatar' type='image/png' 
 	<title>Find a player skin!</title>
 <style>
 body {
-	background-image: url(http://mcspy.info/grad.jpg);
+	background-image: url(http://mcspy.esy.es/grad.jpg);
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: 100% 500px;
@@ -128,7 +128,7 @@ p.responsive {
 <div id="content">
 
 <div class="col-md-12">
-	<img class="logo" src="http://mcspy.info/logo_big.png">
+	<a href="index.php"><img class="logo" src="http://mcspy.info/logo_big.png"></a>
 </div>
 
 <div class="col-md-12">
@@ -160,7 +160,8 @@ p.responsive {
   </div>
   <div class="panel-body">
   	<div class="center">
-   	<?php echo $userSkin;?>
+    <?php echo $userSkin3D;?>
+    <?php echo $userSkin2D;?>
    </div>
    <p><?php echo $skinChange;?>Change this skin to yours!</a></p>
   </div>
@@ -174,16 +175,27 @@ p.responsive {
 <div class="footer">
 	<span>Created by _scrunch</span> &#8226;
 	<span>&copy;2015</span> &#8226;
-	<span>Find me on <a href="http://www.planetminecraft.com/member/tacolover22/" target="_blank">PMC</a></span>
+	<span>Find me on <a href="http://www.planetminecraft.com/member/_scrunch/" target="_blank">PMC</a></span><br><span>
+Feeling generous? Donate any amount and it will be much appreciated! It will help me keep the domain up!</span>
 
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="Y8MWQB9FCUTFJ">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal â€“ The safer, easier way to pay online.">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
 
 </div>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60633427-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
-</html>	
+</html>
