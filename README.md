@@ -12,7 +12,6 @@ Features and Cool little designs:
 - Shows the current skin of the username in 3D Format (Thanks to MCAPI)
 - Ability to change the usernames skin to your players skin
 - Uses bootstrap so design and implementation will be easy
-- 
 Note:
 
 - You will need to have PHP installed on your machine. Check out XAMPP to get your virtual hosting set up the easy way!
