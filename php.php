@@ -9,6 +9,7 @@ $username = $_GET["username"]
 	$username = "notch";
 }
 
+$username = str_replace(' ', '', $username);
 
 //allow the user to change the skin
 $skinChange = "<a href='https://minecraft.net/profile/skin/remote?url=http://skins.minecraft.net/MinecraftSkins/$username.png' target='_blank' </a>";
