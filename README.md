@@ -24,7 +24,7 @@ Thanks to various sources for contributing to the project (most notably, StackOv
 
 Author:
 
-_scrunch developed and designed the site. 
+scrubx developed and designed the site. 
 
 License:
 
